@@ -73,7 +73,7 @@ This has the same effect as you declaring the following in your `.rubocop.yml`:
 ```yaml
 AllCops:
   # remove if already present in your `.rubocop.yml` to gain the full benefit of this gem!
-  TargetRubyVersion: 3.1
+  TargetRubyVersion: 2.6
   NewCops: enable
 ```
 
