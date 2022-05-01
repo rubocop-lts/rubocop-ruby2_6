@@ -45,7 +45,7 @@ official [compatibility matrix](https://github.com/rubocop/rubocop/blob/master/d
 
 ## Stable
 
-All releases of this gem are stable releases. The first version is `1.0.0`.
+All releases of this gem are stable releases. The first version is `1.0.1` (1.0.0 was yanked due to accidentally requiring Ruby 3.1, failing the whole purpose of this project 🥳).
 
 ## Installation
 
@@ -61,7 +61,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 The following is optional.  We'll discuss why you might want to do this after you see what it does.
 
-Add to the top of your project's RuboCop configuration file:
+Add to the top of your project's `.rubocop.yml` configuration file:
 
 ```yaml
 inherit_gem:
@@ -132,7 +132,7 @@ the [Pessimistic Version Constraint][pvc] with two digits of precision.
 For example:
 
 ```ruby
-spec.add_dependency "rubocop-ruby2_6", "~> 0.1"
+spec.add_dependency "rubocop-ruby2_6", "~> 1.0"
 ```
 
 [copyright-notice-explainer]: https://opensource.stackexchange.com/questions/5778/why-do-licenses-such-as-the-mit-license-specify-a-single-year
