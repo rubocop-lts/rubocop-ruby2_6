@@ -33,6 +33,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-[Unreleased]: https://github.com/rubocop-semver/rubocop-ruby2_6/compare/.v1.0.0...HEAD
+[Unreleased]: https://github.com/rubocop-semver/rubocop-ruby2_6/compare/v1.0.1...HEAD
 [1.0.1]: https://github.com/rubocop-semver/rubocop-ruby2_6/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/rubocop-semver/rubocop-ruby2_6/compare/d21b64e4f7ab2d581ed6882c430dd042fe73769b...v1.0.0
