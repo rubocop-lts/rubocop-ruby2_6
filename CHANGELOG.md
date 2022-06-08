@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [1.0.7] 2022-06-08
+### Changed
+* Update to rubocop 1.30.1
+* Removed test_files from gemspec
+* Add binstubs for bundle, rake, rspec, and rubocop
+
 ## [1.0.6] 2022-06-05
 ### Changed
 * Update to rubocop 1.30.0
@@ -43,7 +49,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * Initial release (yanked)
 
-[Unreleased]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v1.0.6...HEAD
+[Unreleased]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v1.0.7...HEAD
+[1.0.7]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v1.0.6...v1.0.7
 [1.0.6]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v1.0.3...v1.0.4
