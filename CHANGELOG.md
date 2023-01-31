@@ -43,7 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.1] 2022-05-01
 ### Fixed
-* Ruby version requirement fixed to 2.6 
+* Ruby version requirement fixed to 2.6
 
 ## [1.0.0] yanked
 ### Added
