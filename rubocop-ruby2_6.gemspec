@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
-require_relative "lib/rubocop/ruby2_6/version"
+# Get the GEMFILE_VERSION without *require* "my_gem/version", for code coverage accuracy
+# See: https://github.com/simplecov-ruby/simplecov/issues/557#issuecomment-825171399
+load "lib/rubocop/ruby2_6/version.rb"
+gem_version = Rubocop::Ruby26::VERSION
+Rubocop::Ruby26.send(:remove_const, :VERSION)
 
 Gem::Specification.new do |spec|
   spec.name = "rubocop-ruby2_6"
-  spec.version = Rubocop::Ruby26::VERSION
+  spec.version = gem_version
   spec.authors = ["Peter Boling"]
   spec.email = ["peter.boling@gmail.com"]
 
