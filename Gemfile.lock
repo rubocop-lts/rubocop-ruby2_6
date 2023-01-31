@@ -56,8 +56,8 @@ GEM
       parser (>= 3.1.1.0)
     rubocop-md (1.1.0)
       rubocop (>= 1.0)
-    rubocop-packaging (0.5.1)
-      rubocop (>= 0.89, < 2.0)
+    rubocop-packaging (0.5.2)
+      rubocop (>= 1.33, < 2.0)
     rubocop-performance (1.15.2)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
@@ -105,7 +105,7 @@ DEPENDENCIES
   simplecov (~> 0.21)
   simplecov-cobertura
   simplecov-lcov (~> 0.8)
-  yard
+  yard (~> 0.9)
 
 BUNDLED WITH
    2.4.5
