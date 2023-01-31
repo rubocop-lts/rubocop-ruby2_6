@@ -86,10 +86,14 @@ This gem requires no other gems. It depends on `rubocop`, but does not `require 
 
 Awareness of `rubocop`'s lack of [SemVer][semver] adherence isn't evenly dispersed in the Ruby community.
 
-The RuboCop team [has real reasons](https://github.com/semver/semver/issues/317)
-for [not following SemVer](https://github.com/rubocop/rubocop/issues/4243), but if you've
-found this project their reasons likely weigh less, in your context (e.g. running `rubocop` from command line), than
-what brought you here.
+The RuboCop team [has reasons](https://github.com/semver/semver/issues/317)
+for [not following SemVer](https://github.com/rubocop/rubocop/issues/4243).
+
+NOTE: They think they are following SemVer,
+but their interpretation differs from mine, and seems to differ from the
+[intent of SemVer's creator][major-versions-not-sacred].
+
+If you need to run `rubocop` from command line in an older version of Ruby, you've come to the right place.
 
 <p align="left">
     <a href="https://metaredux.com/posts/2022/04/21/rubocop-turns-10.html" target="_blank" rel="noopener">
@@ -98,53 +102,81 @@ what brought you here.
 </p>
 
 The purpose of this gem is to constrain the `rubocop` dependency of a project in
-a [SemVer compliant](https://semver.org/) (Semantic Versioning) way that aligns with the the desired minimum
-compatible/supported Ruby version.
+a [SemVer compliant][semver]
+(Semantic Versioning, [Major Versions are Not Sacred][major-versions-not-sacred])
+way that aligns with the the desired minimum compatible/supported Ruby version.
 
-## Ruby Version Support Matrix
+## Ruby Version Support
 
 Adding this gem will facilitate the best practice of adding a `~> ` version constrained `rubocop` dependency, while
 minimizing the risk of a rubocop minor / patch upgrade breaking the build. See the
-official [compatibility matrix][rubocop-matrix] for `rubocop`.
+official [compatibility matrix][rubocop-support-matrix] for `rubocop`.
 
-`rubocop-ruby2_6` (this gem) will install on any version of Ruby >= 2.6, and can be used to analyze code intended to support Ruby >= 2.6.
+### Three Guarantees
 
-* 🧊 - Install on Ruby `<version>`
-* 🏃‍ - Will Execute on Ruby `<version>`
-* 🪷 - Will not execute correctly on Ruby `<version>`
-* 🛠 - Lint code with Ruby `<version>` syntax as the target
+This gem will install a version of `rubocop` which will
+**install** on (1), **run** on (2), and **analyze code** (3) intended to support any version of Ruby >= 2.7.
 
-| gem                     | 1.8.7         | 1.9.3     | 2.0       | 2.1       | 2.2       | 2.3       | 2.4       | 2.5       | 2.6       | 2.7       | 3.0       | 3.1       | ruby-head | jruby-head |
-|-------------------------|---------------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|------------|
-| [rubocop-ruby1_9][rr19] | [🛠][what1_8] | 🧊 🏃‍ 🛠 | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🪷     | 🧊 🪷     | 🧊 🪷      |
-| [rubocop-ruby2_0][rr20] |               |           | 🧊 🏃‍ 🛠 | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🪷     | 🧊 🪷     | 🧊 🪷      |
-| [rubocop-ruby2_1][rr21] |               |           |           | 🧊 🏃‍ 🛠 | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🪷     | 🧊 🪷     | 🧊 🪷      |
-| [rubocop-ruby2_2][rr22] |               |           |           |           | 🧊 🏃‍ 🛠 | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊‍ 🪷    | 🧊 🪷     | 🧊 🪷     | 🧊 🪷      |
-| [rubocop-ruby2_3][rr23] |               |           |           |           |           | 🧊 🏃‍ 🛠 | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🪷     | 🧊 🪷     | 🧊 🪷      |
-| [rubocop-ruby2_4][rr24] |               |           |           |           |           |           | 🧊 🏃‍ 🛠 | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🪷     | 🧊 🪷     | 🧊 🪷      |
-| [rubocop-ruby2_5][rr25] |               |           |           |           |           |           |           | 🧊 🏃‍ 🛠 | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🪷      |
-| [rubocop-ruby2_6][rr26] |               |           |           |           |           |           |           | 🛠        | 🧊 🏃‍ 🛠 | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🪷      |
-| [rubocop-ruby2_7][rr27] |               |           |           |           |           |           |           | 🛠        | 🛠        | 🧊 🏃‍ 🛠 | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍     |
-| [rubocop-ruby3_0][rr30] |               |           |           |           |           |           |           | 🛠        | 🛠        | 🛠        | 🧊 🏃‍ 🛠 | 🧊 🏃‍    | 🧊 🏃‍    | 🧊 🏃‍     |
-| [rubocop-ruby3_1][rr31] |               |           |           |           |           |           |           | 🛠        | 🛠        | 🛠        | 🛠        | 🧊 🏃‍ 🛠 | 🧊 🏃‍    | 🧊 🏃‍     |
+Any change to any of those three abilities would require a major version bump.
+Each [spring `rubocop` drops][rubocop-support-matrix] the ability to **install** and **run** `rubocop` on an EOL'd Ruby.
+Eventually `rubocop` will drop the ability to **analyze code** intended to support an EOL'd Ruby,
+as they already have for Ruby 1.8 and 1.9.
+When the `rubocop` team makes _any_ of these changes they
+[only bump the minor version][rubocop-versioning] of RuboCop,
+in violation of SemVer ([they disagree][rubocop-release-policy]).
+In other words, RuboCop intentionally does not bump the major version when they drop
+_analysis_, _runtime_, or _installation_ support for a given version of Ruby.
+This is a primary _raison d’être_ for this project.
+To get a better understanding of how SemVer is intended to work read this article from the creator of SemVer:
 
-[rr19]: https://github.com/rubocop-lts/rubocop-ruby1_9
-[rr20]: https://github.com/rubocop-lts/rubocop-ruby2_0
-[rr21]: https://github.com/rubocop-lts/rubocop-ruby2_1
-[rr22]: https://github.com/rubocop-lts/rubocop-ruby2_2
-[rr23]: https://github.com/rubocop-lts/rubocop-ruby2_3
-[rr24]: https://github.com/rubocop-lts/rubocop-ruby2_4
-[rr25]: https://github.com/rubocop-lts/rubocop-ruby2_5
-[rr26]: https://github.com/rubocop-lts/rubocop-ruby2_6
-[rr27]: https://github.com/rubocop-lts/rubocop-ruby2_7
-[rr30]: https://github.com/rubocop-lts/rubocop-ruby3_0
-[rr31]: https://github.com/rubocop-lts/rubocop-ruby3_1
-[what1_8]: https://github.com/rubocop-lts/rubocop-ruby1_9#what-about-ruby-18
+- ["Major Version Numbers are Not Sacred"][major-versions-not-sacred]
+
+[rubocop-support-matrix]: https://docs.rubocop.org/rubocop/compatibility.html#support-matrix
+[rubocop-versioning]: https://docs.rubocop.org/rubocop/versioning.html
+[rubocop-release-policy]: https://docs.rubocop.org/rubocop/versioning.html#release-policy
+[major-versions-not-sacred]: https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html
+
+### A Gem Family
+
+The `rubocop-lts` series of gems has a version supporting any version of Ruby you need.
+They can be used as development dependencies for libraries or applications.
+
+- [`rubocop-ruby1_9`][rr19]
+    - [Still supporting Ruby 1.8?][what1_8]
+- [`rubocop-ruby2_0`][rr20]
+- [`rubocop-ruby2_1`][rr21]
+- [`rubocop-ruby2_2`][rr22]
+- [`rubocop-ruby2_3`][rr23]
+- [`rubocop-ruby2_4`][rr24]
+- [`rubocop-ruby2_5`][rr25]
+- [`rubocop-ruby2_6`][rr26]
+- [`rubocop-ruby2_7`][rr27]
+- [`rubocop-ruby3_0`][rr30]
+- [`rubocop-ruby3_1`][rr31]
+
+[rr19]: https://gitlab.com/rubocop-lts/rubocop-ruby1_9
+[rr20]: https://gitlab.com/rubocop-lts/rubocop-ruby2_0
+[rr21]: https://gitlab.com/rubocop-lts/rubocop-ruby2_1
+[rr22]: https://gitlab.com/rubocop-lts/rubocop-ruby2_2
+[rr23]: https://gitlab.com/rubocop-lts/rubocop-ruby2_3
+[rr24]: https://gitlab.com/rubocop-lts/rubocop-ruby2_4
+[rr25]: https://gitlab.com/rubocop-lts/rubocop-ruby2_5
+[rr26]: https://gitlab.com/rubocop-lts/rubocop-ruby2_6
+[rr27]: https://gitlab.com/rubocop-lts/rubocop-ruby2_7
+[rr30]: https://gitlab.com/rubocop-lts/rubocop-ruby3_0
+[rr31]: https://gitlab.com/rubocop-lts/rubocop-ruby3_1
+[what1_8]: https://gitlab.com/rubocop-lts/rubocop-ruby1_9#what-about-ruby-18
 [rubocop-matrix]: https://github.com/rubocop/rubocop/blob/master/docs/modules/ROOT/pages/compatibility.adoc#support-matrix
 
 ## 🗿 Stable
 
-All releases of this gem are stable releases. The first version is `1.0.1` (1.0.0 was yanked due to accidentally requiring Ruby 3.1, failing the whole purpose of this project 🥳).
+All releases of this gem are stable releases.
+We do not release new versions for every release of `rubocop`.
+A typical release cycle for a gem in the `rubocop-lts` family is roughly every six months,
+though eventually analysis support for an old version of Ruby will be dropped .
+When that happens releases of the `rubocop-lts` gem for that version of Ruby will (mostly) cease.
+
+The first version is `1.0.1` (1.0.0 was yanked due to accidentally requiring Ruby 3.1, failing the whole purpose of this project 🥳).
 
 ## ✨ Installation
 
@@ -252,7 +284,7 @@ the [Pessimistic Version Constraint][pvc] with two digits of precision.
 For example:
 
 ```ruby
-spec.add_dependency "rubocop-ruby2_6", "~> 1.0"
+spec.add_dependency "rubocop-ruby2_6", "~> 1.1"
 ```
 
 [copyright-notice-explainer]: https://opensource.stackexchange.com/questions/5778/why-do-licenses-such-as-the-mit-license-specify-a-single-year
