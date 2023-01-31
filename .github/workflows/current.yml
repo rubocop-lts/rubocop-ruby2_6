@@ -42,6 +42,11 @@ jobs:
           - "2.7"
           - "3.0"
           - "3.1"
+          - "jruby"
+        exclude:
+          # Don't care if Rails can install on jruby
+          - gemfile: rails7
+            ruby: "jruby"
 
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
