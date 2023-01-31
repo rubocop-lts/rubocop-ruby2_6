@@ -10,5 +10,3 @@
 # rspec failure tracking
 .rspec_status
 
-# Gemfile Lock files
-Gemfile.lock
