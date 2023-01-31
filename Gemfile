@@ -7,10 +7,6 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 # Specify your gem's dependencies in rubocop-ruby2_6.gemspec
 gemspec
 
-gem "rake", "~> 13.0"
-
-gem "rspec", "~> 3.0"
-
 # Only add to the set of gems from the gemspec when running on local.
 # All CI jobs must use a discrete Gemfile located at gemfiles/*.gemfile. They will not use this Gemfile
 if ENV["CI"].nil?
