@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+# NOTE: This Gemfile is only relevant to local development.
+#       It allows during local development:
+#         - code coverage reports to be generated
+#         - style linting to be run with RuboCop & extensions
+#       All CI builds use files in gemfiles/*.
 source "https://rubygems.org"
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
@@ -28,9 +33,10 @@ if ENV["CI"].nil?
       gem "rubocop-thread_safety", "~> 0.4", require: false
     end
     if coverage
-      gem "codecov", "~> 0.6"
+      gem "codecov", "~> 0.6", require: false # For CodeCov
       gem "simplecov", "~> 0.21", require: false
-      gem "simplecov-cobertura" # XML for Jenkins
+      gem "simplecov-cobertura", require: false # XML for Jenkins
+      gem "simplecov-json", require: false # For CodeClimate
       gem "simplecov-lcov", "~> 0.8", require: false
     end
     if debugging
