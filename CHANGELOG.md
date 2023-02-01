@@ -6,12 +6,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-
 ### Changed
-
 ### Fixed
-
 ### Removed
+
+## [1.1.0] 2023-02-01
+### Added
+* More Linting Rules
+* Improved Rakefile for YARD docs
+* Updated Ruby Version Support in Readme
+* Improved development and versioning policy documentation
+* Documentation of Three Guarantees:
+    * `rubocop-ruby2_6` (this gem) will install a version of `rubocop` which will
+      **install** on (1), **run** on (2), and **analyze code** (3) intended to support any version of Ruby >= 2.6.
+### Changed
+* Upgraded to RuboCop v1.44.1
+  * Compatible with rubocop-packaging ~> 0.5.2
+* Rubocop => RuboCop typo repair in documentation
+* Minimum code coverage == 100%
 
 ## [1.0.7] 2022-06-08
 ### Changed
@@ -49,7 +61,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * Initial release (yanked)
 
-[Unreleased]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v1.0.7...HEAD
+[Unreleased]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v1.0.7...v1.1.0
 [1.0.7]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v1.0.6...v1.0.7
 [1.0.6]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v1.0.4...v1.0.5
