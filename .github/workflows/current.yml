@@ -34,19 +34,16 @@ jobs:
         gemfile:
           - vanilla
           - rails7
-        rubygems:
-          - latest
-        bundler:
-          - latest
         ruby:
           - "2.7"
           - "3.0"
           - "3.1"
-          - "jruby"
+          - "3.2"
         exclude:
-          # Don't care if Rails can install on jruby
-          - gemfile: rails7
-            ruby: "jruby"
+          # Vanilla + 2.7 is effectively run by coverage workflow
+          - gemfile: vanilla
+            ruby: "2.7"
+
 
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}
