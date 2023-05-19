@@ -10,7 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Removed
 
-## [2.0.0] 2023-05-17
+## [2.0.1] 2023-05-18
+### Fixed
+- Ship rakelib/**/*.rake tasks
+- Fix rake_tasks hook on Railtie
+
+## [2.0.0] 2023-05-17 [YANKED]
 ### Added
 - Configs for:
   - rubocop
@@ -85,7 +90,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release (yanked)
 
-[Unreleased]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v1.0.7...v1.1.0
 [1.0.7]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v1.0.6...v1.0.7
