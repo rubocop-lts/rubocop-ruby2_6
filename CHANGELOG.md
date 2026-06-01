@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 ### Changed
+### Fixed
+### Removed
+
+## [3.0.2] 2026-06-01
+### Added
+### Changed
 - Updated direct dependency floors and moved `rubocop-md` to plugin loading.
 ### Fixed
 ### Removed
@@ -148,7 +154,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release (yanked)
 
-[Unreleased]: https://gitlab.com/rubocop-lts/rubocop-ruby2_6/-/compare/v3.0.1...HEAD
+[Unreleased]: https://gitlab.com/rubocop-lts/rubocop-ruby2_6/-/compare/v3.0.2...HEAD
 [2.0.5]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v2.0.4...v2.0.5
 [2.0.4]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v2.0.3...v2.0.4
 [2.0.3]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/v2.0.2...v2.0.3
@@ -166,3 +172,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [1.0.0]: https://github.com/rubocop-lts/rubocop-ruby2_6/compare/d21b64e4f7ab2d581ed6882c430dd042fe73769b...v1.0.0
 [3.0.1]: https://gitlab.com/rubocop-lts/rubocop-ruby2_6/-/compare/v3.0.0...v3.0.1
 [3.0.0]: https://gitlab.com/rubocop-lts/rubocop-ruby2_6/-/compare/v2.0.5...v3.0.0
+[3.0.2]: https://gitlab.com/rubocop-lts/rubocop-ruby2_6/-/compare/v3.0.1...v3.0.2
