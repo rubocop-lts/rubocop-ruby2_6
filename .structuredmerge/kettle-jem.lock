@@ -1,8 +1,8 @@
 ---
 version: 1
 template_state:
-  version: 7.1.34
-  applied_at: '2026-10-20'
+  version: 7.1.36
+  applied_at: '2026-10-21'
   changelog_replay:
     last_entry_key: kettle-jem-template-20260913-001
     last_entry_date: '2026-09-13'
@@ -20,6 +20,7 @@ template_state:
     - gemfiles/modular/templating_local.gemfile
     - rubocop-ruby2_6.gemspec
     kettle-jem/template:
+    - ".licenserc.yaml"
     - ".simplecov"
     - gemfiles/modular/coverage_local.gemfile
     - gemfiles/modular/documentation.gemfile
@@ -494,8 +495,8 @@ files:
   ".licenserc.yaml":
     recipe: template_source_application_licenserc_yaml
     action: write
-    dest_sha256: 2cfbd147680131a708f654902bd6359a6d31045eb44975d35da67d448d7225ae
-    input_fingerprint: e71df090b4769ccb703440a7b036fff32ddaf0ee5770863eb4ddf62d09419ca6
+    dest_sha256: 7074e89d571c0d1a22992db6c552121734bfbc28ac8970e5f064987c525593bd
+    input_fingerprint: 83310b28d0a6c6460a8602871ae6ce17760dc097ff297ad9a577b8b783b834be
     template_sources:
     - ".licenserc.yaml.example"
   ".opencollective.yml":
